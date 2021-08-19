@@ -1,15 +1,16 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 class ArticleController
 
 {
-    private  $databaseManager;
+    private $databaseManager;
+
     public function __construct(DatabaseManager $databaseManager)
-{
- $this->databaseManager = $databaseManager;
-}
+    {
+        $this->databaseManager = $databaseManager;
+    }
 
     public function index()
     {
@@ -46,9 +47,9 @@ class ArticleController
     }
 
 
-
     public function show()
     {
         // TODO: this can be used for a detail page
     }
+
 }

@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+
     class Article
     {
+
         public string $title;
         public ?string $description;
         public ?string $publishDate;
@@ -17,6 +19,9 @@ declare(strict_types=1);
 
         public function formatPublishDate($format = 'DD-MM-YYYY')
         {
-            // TODO: return the date in the required format
+            // done: return the date in the required format
+            $articleDate = $this->publishDate;
+            $formattedDate = date('d-m-Y', strtotime($articleDate));
+            return $formattedDate;
         }
     }
