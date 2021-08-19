@@ -6,6 +6,22 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+function whatIsHappening()
+{
+    echo '<pre>';
+    echo '<h2>$_GET</h2>';
+    var_dump($_GET);
+    echo '<h2>$_POST</h2>';
+    var_dump($_POST);
+    echo '<h2>$_COOKIE</h2>';
+    var_dump($_COOKIE);
+//    echo '<h2>$_SESSION</h2>';
+//    var_dump($_SESSION);
+    echo '</pre>';
+}
+
+whatIsHappening();
+
 //include all your model files here
 require 'Model/Article.php';
 //include all your controllers here
@@ -14,10 +30,12 @@ require 'Controller/ArticleController.php';
 require 'Model/config.php';
 require 'Model/DatabaseManager.php';
 
+
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
 
-
+$articleController = new articleController ($databaseManager);
+$rawArticles= $articleController ->getUsers();
 
 
 // Get the current page to load
