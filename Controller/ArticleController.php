@@ -3,7 +3,14 @@
 declare(strict_types = 1);
 
 class ArticleController
+
 {
+    private  $databaseManager;
+    public function __construct($databaseManager)
+{
+ $this->databaseManager = $databaseManager;
+}
+
     public function index()
     {
         // Load all required data

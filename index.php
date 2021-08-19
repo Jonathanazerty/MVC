@@ -11,6 +11,14 @@ require 'Model/Article.php';
 //include all your controllers here
 require 'Controller/HomepageController.php';
 require 'Controller/ArticleController.php';
+require 'Model/config.php';
+require 'Model/DatabaseManager.php';
+
+$databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
+$databaseManager->connect();
+
+
+
 
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)
@@ -23,7 +31,7 @@ switch ($page) {
         // This is shorthand for:
         // $articleController = new ArticleController;
         // $articleController->index();
-        (new ArticleController())->index();
+        (new ArticleController($databaseManager))->index();
         break;
     case 'home':
     default:
