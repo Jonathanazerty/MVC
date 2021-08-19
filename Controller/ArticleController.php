@@ -50,6 +50,8 @@ class ArticleController
     public function show()
     {
         // TODO: this can be used for a detail page
+
+
     }
 
 }

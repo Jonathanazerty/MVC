@@ -34,7 +34,7 @@ require 'Model/DatabaseManager.php';
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
 
-$articleController = new articleController ($databaseManager);
+$articleController = new ArticleController ($databaseManager);
 $rawArticles= $articleController ->getUsers();
 
 
@@ -51,8 +51,12 @@ switch ($page) {
         // $articleController->index();
         (new ArticleController($databaseManager))->index();
         break;
+    case 'show':
+        (new ArticleController($databaseManager))->show();
+        break;
     case 'home':
     default:
         (new HomepageController())->index();
         break;
+
 }

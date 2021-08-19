@@ -1,1 +1,3 @@
-<?php // This page can be used as a detail page ?>
+<?php // This page can be used as a detail page
+
+?>
