@@ -51,5 +51,9 @@ class ArticleController
     {
         // TODO: this can be used for a detail page
         require 'View/articles/show.php';
+
+//        $selectedTitle = $_GET['action'];
+//        $sql = "SELECT * FROM articles WHERE title='$selectedTitle'";
+//        $this->databaseManager->connection->query($sql)->fetch();
     }
 }
