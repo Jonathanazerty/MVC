@@ -41,6 +41,7 @@ $rawArticles= $articleController ->getArticles();
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)
 $page = $_GET['page'] ?? null;
+$show = $_GET['show'] ?? null;
 
 // Load the controller
 // It will *control* the rest of the work to load the page

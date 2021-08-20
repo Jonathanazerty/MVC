@@ -50,10 +50,13 @@ class ArticleController
     public function show()
     {
         // TODO: this can be used for a detail page
+
+        $articles = $this->getArticles();
+        $selectedTitle = $_GET['action'];
+        $sql = "SELECT * FROM articles WHERE title='$selectedTitle'";
+        $result = $this->databaseManager->connection->query($sql)->fetch();
+       $articleDescription = $result['description'];
         require 'View/articles/show.php';
 
-//        $selectedTitle = $_GET['action'];
-//        $sql = "SELECT * FROM articles WHERE title='$selectedTitle'";
-//        $this->databaseManager->connection->query($sql)->fetch();
     }
 }
