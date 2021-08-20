@@ -35,7 +35,7 @@ $databaseManager = new DatabaseManager($config['host'], $config['user'], $config
 $databaseManager->connect();
 
 $articleController = new ArticleController ($databaseManager);
-$rawArticles= $articleController ->getUsers();
+$rawArticles= $articleController ->getArticles();
 
 
 // Get the current page to load

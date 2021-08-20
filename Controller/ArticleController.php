@@ -15,14 +15,14 @@ class ArticleController
     public function index()
     {
         // Load all required data
-        $articles = $this->getUsers();
+        $articles = $this->getArticles();
 
         // Load the view
         require 'View/articles/index.php';
     }
 
     // Note: this function can also be used in a repository - the choice is yours
-    public function getUsers()
+    public function getArticles()
     {
         // done: prepare the database connection
         // Note: you might want to use a re-usable databaseManager class - the choice is yours
@@ -50,8 +50,6 @@ class ArticleController
     public function show()
     {
         // TODO: this can be used for a detail page
-
-
+        require 'View/articles/show.php';
     }
-
 }
