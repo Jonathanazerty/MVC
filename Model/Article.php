@@ -24,4 +24,9 @@ declare(strict_types=1);
             $formattedDate = date('d-m-Y', strtotime($articleDate));
             return $formattedDate;
         }
+
+        public function url()
+        {
+            return "index.php?page=show&action={$this->id}"
+        }
     }

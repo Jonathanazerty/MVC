@@ -3,8 +3,9 @@
 
 <?php
 
-echo $selectedTitle . '<br>';
-echo $articleDescription;
+echo $article->title . '<br>';
+echo $article->description;
+echo $article->formatPublishDate();
 
 ?>
 

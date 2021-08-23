@@ -34,10 +34,6 @@ require 'Model/DatabaseManager.php';
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
 
-$articleController = new ArticleController ($databaseManager);
-$rawArticles= $articleController ->getArticles();
-
-
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)
 $page = $_GET['page'] ?? null;
@@ -52,7 +48,7 @@ switch ($page) {
         // $articleController->index();
         (new ArticleController($databaseManager))->index();
         break;
-    case 'show':
+    case 'article':
         (new ArticleController($databaseManager))->show();
         break;
     case 'home':

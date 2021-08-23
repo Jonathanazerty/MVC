@@ -52,10 +52,12 @@ class ArticleController
         // TODO: this can be used for a detail page
 
         $articles = $this->getArticles();
-        $selectedTitle = $_GET['action'];
-        $sql = "SELECT * FROM articles WHERE title='$selectedTitle'";
+        $articleId = $_GET['action'];
+        // TODO: use PDO to replace :id by $articleId
+        $sql = "SELECT * FROM articles WHERE id='$articleId'";
         $result = $this->databaseManager->connection->query($sql)->fetch();
-       $articleDescription = $result['description'];
+        $article = new Article($result['title'], $result['description'], $result['publish_date']);
+
         require 'View/articles/show.php';
 
     }

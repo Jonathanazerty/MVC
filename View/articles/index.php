@@ -7,8 +7,8 @@
 
     <ul>
         <?php foreach ($articles as $article) : ?>
-            <li> <a href="index.php?page=show&action=<?=$article->title; ?>">
-                    <?=$article->title?> <?= $article->formatPublishDate()?>
+            <li> <a href="<?= $article->url() ?>">
+                    <?=$article->title?> <?= $article->formatPublishDate() ?>
                 </a></li>
 
         <?php endforeach; ?>
